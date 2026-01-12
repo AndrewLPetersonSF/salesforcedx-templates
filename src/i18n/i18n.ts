@@ -28,6 +28,9 @@ export const messages = {
   MissingLWCDir: "Lightning bundles must have a parent folder named 'lwc'.",
   MissingWebApplicationsDir:
     "Web applications must have a parent folder named 'webApplications'.",
+  MissingSitesDir: "Sites must have a parent folder named 'sites'.",
+  MissingFlexipagesDir:
+    "FlexiPages must have a parent folder named 'flexipages'.",
   MissingLightningComponentTemplate:
     'Template %s not available for component type %s.',
 
@@ -40,6 +43,22 @@ export const messages = {
   customTemplatesInvalidRepoUrl: 'Invalid custom templates repository URL: %s',
   customTemplatesCannotRetrieveDefaultBranch:
     'Cannot retrieve default branch for custom templates repository: %s',
+  MissingSiteTemplatesGitRepo:
+    'Site templates require a GitHub repository URL to be specified in the siteTemplatesGitRepo option.',
+  FailedToLoadSiteTemplatesRepo:
+    'Failed to load the site templates repository. Please verify the URL is correct and accessible.',
+  MissingSiteTemplate:
+    'Site template "%s" not found in repository: %s. Please verify the template name is correct.',
+  MissingFlexipageTemplatesGitRepo:
+    'FlexiPage templates require a GitHub repository URL to be specified in the flexipageTemplatesGitRepo option.',
+  FailedToLoadFlexipageTemplatesRepo:
+    'Failed to load the FlexiPage templates repository. Please verify the URL is correct and accessible.',
+  MissingFlexipageTemplate:
+    'FlexiPage template "%s" not found in repository: %s. Please verify the template name is correct.',
+  InvalidFlexipageTemplate:
+    'Invalid FlexiPage template "%s". Valid templates are: %s',
+  RecordPageRequiresEntityName:
+    'RecordPage template requires an entityName option (e.g., "Account", "Opportunity", "Custom_Object__c").',
   LightningAppBundle: 'A Lightning Application Bundle',
   LightningComponentBundle: 'A Lightning Component Bundle',
   LightningEventBundle: 'A Lightning Event Bundle',

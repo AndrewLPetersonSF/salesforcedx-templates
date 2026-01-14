@@ -111,6 +111,8 @@
     </flexiPageRegions>
     <description><%= description %></description>
     <masterLabel><%= masterlabel %></masterLabel>
-    <template>flexipage:appHomeTemplateHeaderTwoColumnsLeftSidebar</template>
+    <template>
+        <name>flexipage:appHomeTemplateHeaderTwoColumnsLeftSidebar</name>
+    </template>
     <type>AppPage</type>
 </FlexiPage>

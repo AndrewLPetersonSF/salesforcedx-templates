@@ -107,12 +107,88 @@
         <name>relatedTabContent</name>
         <type>Facet</type>
     </flexiPageRegions>
+    <!-- Field Section: Column 1 Fields -->
+    <flexiPageRegions>
+        <% 
+        // Use primaryFields if provided, otherwise default fields
+        const column1Fields = (primaryFields && primaryFields.length > 0) 
+            ? primaryFields 
+            : ['Name', 'OwnerId'];
+        %>
+        <% column1Fields.forEach((field, index) => { %>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.<%= field %></fieldItem>
+                <identifier>Record<%= field.replace(/\./g, '_') %>Column1Field<%= index %></identifier>
+            </fieldInstance>
+        </itemInstances>
+        <% }); %>
+        <name>Facet-FieldSection-Column1</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <!-- Field Section: Column 2 Fields -->
+    <flexiPageRegions>
+        <% 
+        // Use secondaryFields if provided, otherwise default fields
+        const column2Fields = (secondaryFields && secondaryFields.length > 0) 
+            ? secondaryFields 
+            : ['CreatedById', 'LastModifiedById'];
+        %>
+        <% column2Fields.forEach((field, index) => { %>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.<%= field %></fieldItem>
+                <identifier>Record<%= field.replace(/\./g, '_') %>Column2Field<%= index %></identifier>
+            </fieldInstance>
+        </itemInstances>
+        <% }); %>
+        <name>Facet-FieldSection-Column2</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <!-- Field Section: Column Facet -->
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-FieldSection-Column1</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-FieldSection-Column2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-FieldSection-Columns</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <!-- Field Section Component -->
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>2</value>
+                    <value>Facet-FieldSection-Columns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
